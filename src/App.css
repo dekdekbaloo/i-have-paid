@@ -4,4 +4,21 @@ button {
   border-radius: 4px;
 }
 
+/* CSS transitions */
+.slide-down-enter {
+  transform: translate3d(0, -100%, 0);
+}
 
+.slide-down-enter.slide-down-enter-active {
+  transform: translate3d(0, 0, 0);
+  transition: all 0.2s ease-out;
+}
+
+.slide-down-exit {
+  transform: translate3d(0, 0, 0);
+}
+
+.slide-down-exit.slide-down-exit-active {
+  transform: translate3d(0, -100%, 0);
+  transition: all 0.2s ease-in;
+}

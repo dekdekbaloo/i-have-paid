@@ -9,7 +9,6 @@ export default function Select({ options, onChange, value: currentValue }) {
     onChange(value)
   }
 
-  console.log(currentValue)
   return (
     <div className="select">
       {options.map(({ value, label }) => (
