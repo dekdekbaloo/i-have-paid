@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "standard",
+    "standard-react",
+    "prettier",
+    "prettier/standard",
+    "prettier/react"
+  ],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error"
+  }
+}

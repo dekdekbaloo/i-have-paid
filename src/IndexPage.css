@@ -1,0 +1,23 @@
+.index-page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0099ff;
+  color: white;
+  padding: 0 100px;
+}
+
+.index-page h1 {
+  margin: 0;
+  font-size: 110px;
+}
+
+.index-page .index-page__button {
+  font-size: 50px;
+  margin-top: 50px;
+}
