@@ -4,21 +4,32 @@ import categories from './categories'
 import './CategoryPage.css'
 import BackButton from '../ui-kit/BackButton'
 import Select from '../ui-kit/Select'
+import { withEntry } from './entryContext'
 
-export default withRouter(function CategoryPage({ history }) {
-  const handleChange = value => {
-    // TODO: Change state to top context
-    console.log(value)
-    history.push('/entry/cost')
-  }
+export default withEntry(
+  withRouter(function CategoryPage({ history, entry }) {
+    const {
+      value: { category },
+      actions: { setCategory }
+    } = entry
 
-  return (
-    <div className="category-page">
-      <BackButton />
-      <h1>I HAVE PAID FOR</h1>
-      <div className="category-page__input-wrapper">
-        <Select options={categories} onChange={handleChange} />
+    const handleChange = value => {
+      setCategory(value)
+      history.push('/entry/cost')
+    }
+
+    return (
+      <div className="category-page">
+        <BackButton />
+        <h1>I HAVE PAID FOR</h1>
+        <div className="category-page__input-wrapper">
+          <Select
+            options={categories}
+            value={category}
+            onChange={handleChange}
+          />
+        </div>
       </div>
-    </div>
-  )
-})
+    )
+  })
+)
