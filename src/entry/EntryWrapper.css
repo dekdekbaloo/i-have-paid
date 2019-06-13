@@ -1,3 +1,7 @@
+.entry-wrapper {
+  overflow: hidden;
+}
+
 .entry-wrapper h1 {
   margin: 0;
   height: 50vh;

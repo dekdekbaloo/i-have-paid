@@ -17,4 +17,8 @@ const categories = [
   }
 ]
 
+export function getCategoryLabel(categoryValue) {
+  const category = categories.find(({ value }) => value === categoryValue)
+  return category ? category.label : ''
+}
 export default categories

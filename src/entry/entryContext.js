@@ -9,7 +9,8 @@ const entryContext = {
   value: initialState,
   actions: {
     setCategory() {},
-    setCost() {}
+    setCost() {},
+    submitEntry() {}
   }
 }
 
