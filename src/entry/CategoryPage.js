@@ -2,9 +2,9 @@ import React from 'react'
 import { withRouter } from 'react-router-dom'
 import categories from './categories'
 import './CategoryPage.css'
-import BackButton from '../ui-kit/BackButton'
 import Select from '../ui-kit/Select'
 import { withEntry } from './entryContext'
+import EntryWrapper from './EntryWrapper'
 
 export default withEntry(
   withRouter(function CategoryPage({ history, entry }) {
@@ -19,17 +19,9 @@ export default withEntry(
     }
 
     return (
-      <div className="category-page">
-        <BackButton />
-        <h1>I HAVE PAID FOR</h1>
-        <div className="category-page__input-wrapper">
-          <Select
-            options={categories}
-            value={category}
-            onChange={handleChange}
-          />
-        </div>
-      </div>
+      <EntryWrapper className="category-page" title="I HAVE PAID FOR">
+        <Select options={categories} value={category} onChange={handleChange} />
+      </EntryWrapper>
     )
   })
 )
