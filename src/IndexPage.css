@@ -21,3 +21,13 @@
   font-size: 50px;
   margin-top: 50px;
 }
+
+.index-page .index-page__entry {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.index-page .index-page__entry button {
+  font-size: 50px;
+}

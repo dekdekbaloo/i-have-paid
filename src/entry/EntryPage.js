@@ -18,6 +18,7 @@ export default function EntryPage({ match, history }) {
           setCost: cost => setState({ ...state, cost }),
           submitEntry: () => {
             saveEntry(state)
+            setState(initialState)
             history.push('/entry')
           }
         }
