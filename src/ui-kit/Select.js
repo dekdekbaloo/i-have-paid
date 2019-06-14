@@ -2,22 +2,24 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 
-import './Select.css'
+import styles from './Select.module.scss'
 
-export default function Select({ options, onChange, value: currentValue }) {
+export default function Select({
+  className,
+  options,
+  onChange,
+  value: currentValue
+}) {
   const change = value => () => {
     onChange(value)
   }
 
   return (
-    <div className="select">
+    <div className={cx(styles.select, className)}>
       {options.map(({ value, label }) => (
         <div
           key={value}
-          className={cx(
-            'select__option',
-            value === currentValue && '--selected'
-          )}
+          className={cx(styles.option, value === currentValue && styles.active)}
           onClick={change(value)}
         >
           {label}
@@ -28,6 +30,7 @@ export default function Select({ options, onChange, value: currentValue }) {
 }
 
 Select.propTypes = {
+  className: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   options: PropTypes.arrayOf(

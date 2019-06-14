@@ -1,11 +1,11 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 
-import './BackButton.css'
+import styles from './BackButton.module.scss'
 
 export default withRouter(function BackButton({ history }) {
   return (
-    <button className="back-button" onClick={history.goBack}>
+    <button className={styles.backButton} onClick={history.goBack}>
       ↩️
     </button>
   )
