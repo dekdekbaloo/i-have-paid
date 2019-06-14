@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
-import categories, { getCategoryLabel } from './categories'
-import './CostPage.css'
+import { getCategoryLabel } from './categories'
+import styles from './CostPage.module.scss'
 import { withEntry } from './entryContext'
 import EntryWrapper from './EntryWrapper'
 
@@ -28,12 +28,11 @@ export default withEntry(
 
     return (
       <EntryWrapper
-        className="cost-page"
+        className={styles.costPage}
         title={`HOW MUCH FOR ${categoryLabel}?`}
       >
-        <div className="cost-page__content">
+        <div className={styles.content}>
           <input
-            id="cost"
             value={cost || ''}
             type="number"
             onChange={handleChange}

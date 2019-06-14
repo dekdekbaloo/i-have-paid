@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
-import './App.css'
+import './App.scss'
 import IndexPage from './IndexPage'
 import EntryPage from './entry/EntryPage'
 

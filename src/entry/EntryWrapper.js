@@ -3,14 +3,14 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 import BackButton from '../ui-kit/BackButton'
 
-import './EntryWrapper.css'
+import styles from './EntryWrapper.module.scss'
 
 export default function EntryWrapper({ className, title, children }) {
   return (
-    <div className={cx('entry-wrapper', className)}>
+    <div className={cx(styles.entryWrapper, className)}>
       <BackButton />
       <h1>{title}</h1>
-      <div className="entry-wrapper__content">{children}</div>
+      <div className={styles.content}>{children}</div>
     </div>
   )
 }
