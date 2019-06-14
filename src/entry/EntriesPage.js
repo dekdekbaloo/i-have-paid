@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getEntries } from './entry'
-import { getCategoryLabel } from './categories'
 
 import styles from './EntriesPage.module.scss'
+import EntryItem from './EntryItem'
 
 export default function EntriesPage() {
+  const [activeEntryIndex, setActiveEntryIndex] = useState(-1)
+
+  const handleEntryItemClick = i => () => {
+    setActiveEntryIndex(activeEntryIndex === i ? -1 : i)
+  }
+
   const entries = getEntries()
   const total = entries.reduce((sum, { cost }) => sum + cost, 0)
 
@@ -18,14 +24,13 @@ export default function EntriesPage() {
         </Link>
       </div>
       <div className={styles.content}>
-        {entries.map(({ category, cost, date }) => (
-          <div className={styles.item} key={date}>
-            <div>
-              <div>{getCategoryLabel(category)}</div>
-              <div>{new Date(date).toLocaleDateString()}</div>
-            </div>
-            <div>{cost}</div>
-          </div>
+        {entries.map((item, i) => (
+          <EntryItem
+            onClick={handleEntryItemClick(i)}
+            key={item.date}
+            item={item}
+            active={activeEntryIndex === i}
+          />
         ))}
       </div>
       <div className={styles.footer}>

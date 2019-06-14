@@ -4,11 +4,12 @@ import { Route, Switch } from 'react-router-dom'
 import CategoryPage from './CategoryPage'
 import { EntryProvider, initialState } from './entryContext'
 import CostPage from './CostPage'
-import { saveEntry } from './entry'
+import { saveEntry, removeEntry } from './entry'
 import EntriesPage from './EntriesPage'
 
 export default function EntryPage({ match, history }) {
   const [state, setState] = useState(initialState)
+  console.log(history)
   return (
     <EntryProvider
       value={{
@@ -20,6 +21,9 @@ export default function EntryPage({ match, history }) {
             saveEntry(state)
             setState(initialState)
             history.push('/entry')
+          },
+          removeEntry: entry => {
+            removeEntry(entry)
           }
         }
       }}
