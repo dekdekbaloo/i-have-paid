@@ -14,6 +14,10 @@ const categories = [
   {
     value: 'others',
     label: 'Others ⚙️'
+  },
+  {
+    value: 'NUTz',
+    label: 'NUTzLOEY 🥜'
   }
 ]
 
