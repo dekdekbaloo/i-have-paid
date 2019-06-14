@@ -10,7 +10,8 @@ const entryContext = {
   actions: {
     setCategory() {},
     setCost() {},
-    submitEntry() {}
+    submitEntry() {},
+    removeEntry() {}
   }
 }
 

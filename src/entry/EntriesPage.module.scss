@@ -29,16 +29,6 @@
     }
   }
 
-  .item {
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    &:nth-child(2n + 1) {
-      background: #eeeeee;
-    }
-  }
-
   .content {
     height: calc(100vh - 78px - 58px);
     overflow: auto;

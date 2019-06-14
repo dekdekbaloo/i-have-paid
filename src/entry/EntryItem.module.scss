@@ -1,0 +1,29 @@
+.entryItem {
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+  &:nth-child(2n + 1) {
+    background: #eeeeee;
+  }
+
+  .cost {
+    margin-left: auto;
+  }
+
+  .deleteButton {
+    margin-left: 10px;
+    animation: deleteButtonInit 1 0.2s;
+  }
+}
+
+@keyframes deleteButtonInit {
+  from {
+    transform: scale3d(0, 0, 1)
+  }
+  to {
+    transform: scale3d(1, 1, 1)
+  }
+}

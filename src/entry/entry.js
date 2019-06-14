@@ -22,3 +22,17 @@ export function saveEntry(entry) {
 
   window.localStorage.setItem(ENTRIES_KEY, JSON.stringify(newEntries))
 }
+
+export function removeEntry(entry) {
+  const entries = getEntries()
+  const newEntries = entries.filter(
+    ({ category, cost, date }) =>
+      !(
+        category === entry.category &&
+        cost === entry.cost &&
+        date === entry.date
+      )
+  )
+
+  window.localStorage.setItem(ENTRIES_KEY, JSON.stringify(newEntries))
+}
